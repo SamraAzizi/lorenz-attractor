@@ -12,3 +12,18 @@ def plot_3d_attractor(x, y, z, save_path=None):
     if save_path:
         plt.savefig(save_path, dpi=300)
     plt.close()
+
+def plot_time_series(t, x, x_perturbed=None, save_path=None):
+    """Plot time evolution and butterfly effect"""
+    plt.figure(figsize=(10, 6))
+    plt.plot(t, x, 'b', label="Original")
+    if x_perturbed is not None:
+        plt.plot(t, x_perturbed, 'r--', label="Perturbed", alpha=0.7)
+    plt.title("Time Evolution of X(t)")
+    plt.xlabel("Time"), plt.ylabel("X value")
+    plt.legend()
+    plt.grid(True)
+    
+    if save_path:
+        plt.savefig(save_path, dpi=300)
+    plt.close()
