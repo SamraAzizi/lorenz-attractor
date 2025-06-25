@@ -8,7 +8,8 @@ def run_simulation(config_path="config/params.yaml"):
     # Load parameters
     with open(config_path) as f:
         params = yaml.safe_load(f)
-        # Create output directories
+    
+    # Create output directories
     Path("data").mkdir(exist_ok=True)
     Path("figs").mkdir(exist_ok=True)
     
@@ -33,3 +34,14 @@ def run_simulation(config_path="config/params.yaml"):
         rho=params["rho"],
         beta=params["beta"]
     )
+    
+    # Generate plots
+    plot_3d_attractor(x, y, z, save_path="figs/lorenz_3d.png")
+    plot_time_series(t, x, x_p, save_path="figs/time_series.png")
+    
+    # Save data
+    np.save("data/original.npy", np.vstack((x, y, z)))
+    np.save("data/perturbed.npy", x_p)
+
+if __name__ == "__main__":
+    run_simulation()
