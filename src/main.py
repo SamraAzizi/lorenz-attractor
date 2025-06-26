@@ -1,8 +1,8 @@
 import numpy as np
 from pathlib import Path
 import yaml
-from .lorenz import solve_lorenz
-from .visualize import plot_3d_attractor, plot_time_series
+from lorenz import solve_lorenz  # Removed relative import (.)
+from visualize import plot_3d_attractor, plot_time_series
 
 def run_simulation(config_path="config/params.yaml"):
     # Load parameters
@@ -16,6 +16,8 @@ def run_simulation(config_path="config/params.yaml"):
     # Time grid
     t = np.linspace(0, params["t_max"], params["steps"])
     
+    # Run simulations (rest of the code remains the same)
+    # ...
     # Run simulations
     x, y, z = solve_lorenz(
         initial_state=params["initial_state"],
