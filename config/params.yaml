@@ -1,0 +1,10 @@
+
+# Classic chaotic parameters
+sigma: 10
+rho: 28
+beta: 8/3
+
+# Simulation settings
+initial_state: [0.1, 0.1, 0.1]
+t_max: 50
+steps: 10000
