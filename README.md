@@ -51,4 +51,68 @@ cd lorenz_attractor
 pip install .
 
 ```
-##
+## Configuration (config/params.yaml)
+Edit the params.yaml file to customiae your simulation:
+```bash
+initial_state: [1.0, 1.0, 1.0]
+sigma: 10.0
+rho: 28.0
+beta: 2.6666666666666665
+t_max: 40.0
+steps: 10000
+
+```
+- `initial_state`: Starting coordinates `[x0, y0, z0]`
+- `sigma`, `rho`, `beta`: Parameters of the Lorenz system
+- `t_max`: Simulation time duration
+- `steps`: Number of time steps in the simulation
+
+## Running the simulation
+Execute the following:
+```bash
+python src/main.py
+
+```
+
+This will:
+- Solve the Lorenz equations using scipy.integrate.odeint
+- Plot:
+    - 3D Lorenz attractor: `figs/lorenz_3d.png`
+    - Time-series plot of `X(t)` with and without a small perturbation: `figs/time_series.png`
+- Save simulation data in:
+    - `data/original.npy` — original solution
+    - `data/perturbed.npy` — perturbed solution
+
+## Visual Output
+- `figs/lorenz_3d.png`
+A beautiful 3D trajectory of the Lorenz attractor.
+
+- `figs/time_series.png`
+A 2D plot of `x(t)` and its divergence due to small perturbations — the butterfly effect in action.
+
+
+## What is the Lorenz System?
+
+The Lorenz system is a simplified mathematical model for atmospheric convection, defined by:
+
+
+dt
+dx
+​
+ 
+dt
+dy
+​
+ 
+dt
+dz
+​
+ 
+​
+  
+=σ(y−x)
+=x(ρ−z)−y
+=xy−βz
+​
+ 
+It exhibits chaotic behavior for specific values of the parameters.
