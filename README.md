@@ -97,22 +97,18 @@ The Lorenz system is a simplified mathematical model for atmospheric convection,
 
 
 dt
-dx
+dx =σ(y−x)
 ​
  
 dt
-dy
+dy =x(ρ−z)−y
 ​
  
 dt
-dz
+dz =xy−βz
 ​
  
 ​
-  
-=σ(y−x)
-=x(ρ−z)−y
-=xy−βz
-​
+
  
 It exhibits chaotic behavior for specific values of the parameters.
