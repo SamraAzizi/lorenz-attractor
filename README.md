@@ -96,16 +96,13 @@ A 2D plot of `x(t)` and its divergence due to small perturbations — the butter
 The Lorenz system is a simplified mathematical model for atmospheric convection, defined by:
 
 
-dt
-dx =σ(y−x)
+dt/dx =σ(y−x)
 ​
  
-dt
-dy =x(ρ−z)−y
+dt/dy =x(ρ−z)−y
 ​
  
-dt
-dz =xy−βz
+dt/dz =xy−βz
 ​
  
 ​
